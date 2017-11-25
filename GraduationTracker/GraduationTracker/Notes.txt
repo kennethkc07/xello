@@ -1,0 +1,25 @@
+﻿Notes
+
+1) Added "EntityBase" Class and "IRepository" Interface
+2) EntityBase holds an abstract class that initializes all properties to default values till the nth level
+3) IRepository Interface holds implementation contract for all generic classes
+4) Course, Diploma, Standing and Student classes all inherit the EntityBase
+5) Repository now implements IRepository
+6) Code instructions from GetDiplomas, GetRequirements, GetStudents have been moved to the Repository Constructor as it is intended to behave like the DBSet object in Entity Framework
+7) Removed code redundancy by moving the contents of GetDiploma, GetRequirement and GetStudent to "FetchRecordById"
+8) Used var(s) and dynamic(s) so as to loosley couple code where ever possible
+9) Renamed the "STANDING" enum to "Standing" to be consistent with the Microsoft's .NET Framework naming conventions
+10) Removed the variable "credits" as the value were only assigned by never used in the application
+11) Re-wrote the code to implicit type and moved the DB call to the outer section of the loop to reduce unecessary "Select" execution if records don't match with the database
+12) Modified return statement with ternary operators and removed the varirable "standing" as the results are different all the time, making the use of the variable obsolete as it would be more efficient to access the cosntant values directly.
+13) Modified the "TestHasCredits" and added cases to check if null values are pased, if empty lists are passed, if course values don't match the requirement, and if the student has earned the standing of SumaCumLaude. Even more cases can be written after fully understanding the domain requirements.
+14) Additional Note (Not Impemented) : One can implement the IDisposable interface and suppress the garbage collector from running 2 checks.
+
+
+The above changes were made to the best of my understanding. If there are better ways to optimize/structure the code, please, do share your knowledge. 
+
+I can be reached at kenneth.k.christian@gmail.com
+
+Can't wait to hear your suggestions/criticism :)
+
+Thank you for your time and patience

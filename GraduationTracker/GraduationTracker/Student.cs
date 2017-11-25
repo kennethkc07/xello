@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GraduationTracker
+﻿namespace GraduationTracker
 {
-    public class Student
+    using System.Collections.Generic;
+
+    public class Student : EntityBase
     {
         public int Id { get; set; }
-        public Course[] Courses { get; set; }
-        public STANDING Standing { get; set; } = STANDING.None;
+        public List<Course> Courses { get; set; }
+        public Standing Standing { get; set; } = Standing.None;
+
+        public Student() : base() { }
     }
 }

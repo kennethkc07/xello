@@ -1,15 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿/// <summary>
+/// Holds Identities of Courses for a particular Diploma Program
+/// </summary>
 namespace GraduationTracker
 {
-    public class Diploma
+    using System.Collections.Generic;
+
+    public class Diploma : EntityBase
     {
         public int Id { get; set; }
         public int Credits { get; set; }
-        public int[] Requirements { get; set; }
+        public List<int> Requirements { get; set; }
+
+        public Diploma() : base() { }
     }
 }
